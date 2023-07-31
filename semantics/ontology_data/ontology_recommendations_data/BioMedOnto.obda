@@ -1,0 +1,151 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	MAPID-cell_line
+target		:kgdb/cell_line/{cell_line_id} a :cell_line ; :cell_line_id {cell_line_id}^^xsd:string ; :name {name}^^xsd:string ; :gender {gender}^^xsd:string ; :category {category}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :type {type}^^xsd:string . 
+source		SELECT * FROM cell_line__nodes
+
+mappingId	MAPID-disease
+target		:kgdb/disease/{disease_id} a :disease ; :disease_id {disease_id}^^xsd:string ; :name {name}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :type {type}^^xsd:string . 
+source		SELECT * FROM disease__nodes
+
+mappingId	MAPID-tissue
+target		:kgdb/tissue/{tissue_id} a :tissue ; :tissue_id {tissue_id}^^xsd:string ; :name {name}^^xsd:string ; :definition {definition}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :type {type}^^xsd:string . 
+source		SELECT * FROM tissue__nodes
+
+mappingId	MAPID-cell_type
+target		:kgdb/cell_type/{cell_type_id} a :cell_type ; :cell_type_id {cell_type_id}^^xsd:string ; :name {name}^^xsd:string ; :definition {definition}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :type {type}^^xsd:string . 
+source		SELECT * FROM cell_type__nodes
+
+mappingId	MAPID-cell_line_id_obtained_from_sample_with_disease_relation
+target		:kgdb/cell_line/{cell_line_source} :obtained_from_sample_with_disease :kgdb/disease/{disease_target} . 
+source		SELECT * FROM cell_line__obtained_from_sample_with_disease__relation
+
+mappingId	MAPID-cell_line_id_derived_from_relation
+target		:kgdb/cell_line/{cell_line_source} :derived_from :kgdb/cell_line/{cell_line_target} . 
+source		SELECT * FROM cell_line__derived_from__relation
+
+mappingId	MAPID-cell_line_id_originate_from_same_individual_as_relation
+target		:kgdb/cell_line/{cell_line_source} :originate_from_same_individual_as :kgdb/cell_line/{cell_line_target} . 
+source		SELECT * FROM cell_line__originate_from_same_individual_as__relation
+
+mappingId	MAPID-disease_id_is_a_disease_relation
+target		:kgdb/disease/{disease_source} :is_a :kgdb/disease/{disease_target} . 
+source		SELECT * FROM disease__is_a__relation
+
+mappingId	MAPID-tissue_id_is_a_tissue_relation
+target		:kgdb/tissue/{tissue_source} :is_a :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__is_a__relation
+
+mappingId	MAPID-tissue_id_part_of_tissue_relation
+target		:kgdb/tissue/{tissue_source} :part_of :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__part_of_tissue__relation
+
+mappingId	MAPID-tissue_id_part_of_cell_type_relation
+target		:kgdb/tissue/{tissue_source} :part_of :kgdb/cell_type/{cell_type_target} . 
+source		SELECT tissue_source, cell_type_target FROM tissue__part_of_cell_type__relation
+
+mappingId	MAPID-tissue_id_causually_influences_relation
+target		:kgdb/tissue/{tissue_source} :causually_influences :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__causually_influences__relation
+
+mappingId	MAPID-tissue_id_contained_in_relation
+target		:kgdb/tissue/{tissue_source} :contained_in :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__contained_in__relation
+
+mappingId	MAPID-tissue_id_develops_from_tissue_relation
+target		:kgdb/tissue/{tissue_source} :develops_from :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__develops_from_tissue__relation
+
+mappingId	MAPID-tissue_id_develops_from_cell_type_relation
+target		:kgdb/tissue/{tissue_source} :develops_from :kgdb/cell_type/{cell_type_target} . 
+source		SELECT tissue_source, cell_type_target FROM tissue__develops_from_cell_type__relation
+
+mappingId	MAPID-tissue_id_produced_by_tissue_relation
+target		:kgdb/tissue/{tissue_source} :produced_by :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__produced_by_tissue__relation
+
+mappingId	MAPID-tissue_id_produced_by_cell_type_relation
+target		:kgdb/tissue/{tissue_source} :produced_by :kgdb/cell_type/{cell_type_target} . 
+source		SELECT tissue_source, cell_type_target FROM tissue__produced_by_cell_type__relation
+
+mappingId	MAPID-tissue_id_disease_causes_dysfunction_of_relation
+target		:kgdb/tissue/{tissue_source} :disease_causes_dysfunction_of :kgdb/tissue/{tissue_target} . 
+source		SELECT tissue_source, tissue_target FROM tissue__disease_causes_dysfunction_of__relation
+
+mappingId	MAPID-tissue_id_bearer_of_relation
+target		:kgdb/tissue/{tissue_source} :bearer_of :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM tissue__bearer_of__relation
+
+mappingId	MAPID-tissue_id_realized_in_relation
+target		:kgdb/tissue/{tissue_source} :realized_in :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM tissue__realized_in__relation
+
+mappingId	MAPID-tissue_id_disease_arises_from_structure_relation
+target		:kgdb/tissue/{tissue_source} :disease_arises_from_structure :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM tissue__disease_arises_from_structure__relation
+
+mappingId	MAPID-cell_type_id_is_a_cell_type_relation
+target		:kgdb/cell_type/{cell_type_source} :is_a :kgdb/cell_type/{cell_type_target} . 
+source		SELECT cell_type_source, cell_type_target FROM cell_type__is_a__relation
+
+mappingId	MAPID-cell_type_id_develops_from_tissue_relation
+target		:kgdb/cell_type/{cell_type_source} :develops_from :kgdb/tissue/{tissue_target} . 
+source		SELECT cell_type_source, tissue_target FROM cell_type__develops_from_tissue__relation
+
+mappingId	MAPID-cell_type_id_develops_from_cell_line_relation
+target		:kgdb/cell_type/{cell_type_source} :develops_from :kgdb/cell_line/{cell_line_target} . 
+source		SELECT * FROM cell_type__develops_from_cell_line__relation
+
+mappingId	MAPID-cell_type_id_develops_from_cell_type_relation
+target		:kgdb/cell_type/{cell_type_source} :develops_from :kgdb/cell_type/{cell_type_target} . 
+source		SELECT * FROM cell_type__develops_from_cell_type__relation
+
+mappingId	MAPID-cell_type_id_part_of_tissue_relation
+target		:kgdb/cell_type/{cell_type_source} :part_of :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM cell_type__part_of_tissue__relation
+
+mappingId	MAPID-cell_type_id_part_of_cell_type_relation
+target		:kgdb/cell_type/{cell_type_source} :part_of :kgdb/cell_type/{cell_type_target} . 
+source		SELECT * FROM cell_type__part_of_cell_type__relation
+
+mappingId	MAPID-cell_type_id_realized_in_relation
+target		:kgdb/cell_type/{cell_type_source} :realized_in :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM cell_type__realized_in__relation
+
+mappingId	MAPID-cell_type_id_disease_causes_dysfunction_of_relation
+target		:kgdb/cell_type/{cell_type_source} :disease_causes_dysfunction_of :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM cell_type__disease_causes_dysfunction_of__relation
+
+mappingId	MAPID-cell_type_id_disease_arises_from_structure_relation
+target		:kgdb/cell_type/{cell_type_source} :disease_arises_from_structure :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM cell_type__disease_arises_from_structure__relation
+
+mappingId	MAPID-cell_line_id_sampled_from_relation
+target		:kgdb/cell_line/{cell_line_source} :sampled_from :kgdb/tissue/{tissue_target} . 
+source		SELECT * FROM tissue__sampled_from__relation
+
+mappingId	MAPID-gene
+target		:kgdb/gene/{gene_id} a :gene ; :gene_id {gene_id}^^xsd:string ; :name {gene_symbol}^^xsd:string ; :full_name {name}^^xsd:string ; :prev_name {prev_name}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :location {location}^^xsd:string ; :date_modified {date_modified}^^xsd:string ; :ena {ena}^^xsd:string ; :entrez_id {entrez_id}^^xsd:string ; :mgd_id {mgd_id}^^xsd:string ; :pubmed_id {pubmed_id}^^xsd:string ; :refseq_accession {refseq_accession}^^xsd:string ; :vega_id {vega_id}^^xsd:string ; :ensembl_gene_id {ensembl_gene_id}^^xsd:string ; :ccds_id {ccds_id}^^xsd:string ; :locus_group {locus_group}^^xsd:string ; :omim_id {omim_id}^^xsd:string ; :uniprot_ids {uniprot_ids}^^xsd:string ; :ucsc_id {ucsc_id}^^xsd:string ; :rgd_id {rgd_id}^^xsd:string ; :location_sortable {location_sortable}^^xsd:string ; :agr {agr}^^xsd:string ; :mane_select {mane_select}^^xsd:string ; :enzyme_id {enzyme_id}^^xsd:string ; :gene_group {gene_group}^^xsd:string ; :prev_symbol {prev_symbol}^^xsd:string ; :alias_name {alias_name}^^xsd:string ; :pseudogene_org {pseudogene_org}^^xsd:string ; :imgt {imgt}^^xsd:string . 
+source		SELECT * FROM gene__nodes
+
+mappingId	MAPID-drug
+target		:kgdb/drug/{drug_id} a :drug ; :drug_id {drug_id}^^xsd:string ; :name {name}^^xsd:string ; :synonyms {synonyms}^^xsd:string ; :chebi_id {chebi_id}^^xsd:string ; :chembl_id {chembl_id}^^xsd:string . 
+source		SELECT * FROM drug__nodes
+
+mappingId	MAPID-drug-id_interacts-with_relation
+target		:kgdb/drug/{drug_source} :interacts_with :kgdb/gene/{gene_target} . 
+source		SELECT drug_source, gene_target from drug__interacts_with__relation
+
+mappingId	MAPID-drug_id_has-similar-structure_relation
+target		:kgdb/drug/{drug_source} :has_similar_structure :kgdb/drug/{drug_target} . 
+source		SELECT drug_source, drug_target FROM drug__has_similar_structure__relation;
+]]
+

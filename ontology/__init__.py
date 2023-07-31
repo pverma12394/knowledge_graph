@@ -1,0 +1,6 @@
+from ontology.cell_line import main_cell_line, main_cellosaurus
+from ontology.disease_gene import main_disease_gene
+from ontology.diseases import main_mesh_disease
+from ontology.genes import main_genes
+from ontology.tissue_cell_type import main_load_tissue_cell_type
+from ontology.tissue_cell_line_rel import main_tissue_cell_line_rel

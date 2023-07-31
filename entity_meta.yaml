@@ -1,0 +1,18 @@
+cell_line:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/cell_line.obo"
+    version: "38.0"
+cell_type:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/cell_type.obo"
+    version: "releases/2021-06-29"
+cell_line_cellosaurus:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/cellosaurus-edited-v3.obo"
+    version: "38.0"
+disease:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/disease.obo"
+    version: "1.4"
+drug:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/drug.obo"
+    version: "1.4"
+tissue:
+    link: "https://raw.githubusercontent.com/bioinfo-el/ontologies/main/obo/tissue.obo"
+    version: "1.4"

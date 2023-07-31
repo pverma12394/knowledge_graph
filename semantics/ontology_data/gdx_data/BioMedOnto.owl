@@ -1,0 +1,464 @@
+@prefix : <http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/pawan/ontologies/2022/6/BioMedOnto> .
+
+<http://www.semanticweb.org/pawan/ontologies/2022/6/BioMedOnto> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#id
+:id rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#shorthand
+:shorthand rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#associated_with
+:associated_with rdf:type owl:ObjectProperty ;
+                 rdfs:domain :pathway ;
+                 rdfs:range :gene ;
+                 :id "associated_with"^^xsd:string ;
+                 :shorthand "associated_with"^^xsd:string ;
+                 rdfs:label "associated with"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#bearer_of
+:bearer_of rdf:type owl:ObjectProperty ;
+           rdfs:domain :tissue ;
+           rdfs:range :tissue ;
+           :id "bearer_of"^^xsd:string ;
+           :shorthand "bearer_of"^^xsd:string ;
+           rdfs:label "bearer of"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#causually_influences
+:causually_influences rdf:type owl:ObjectProperty ;
+                      rdfs:domain :tissue ;
+                      rdfs:range :tissue ;
+                      :id "causually_influences"^^xsd:string ;
+                      :shorthand "causually_influences"^^xsd:string ;
+                      rdfs:label "causually influences"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#contained_in
+:contained_in rdf:type owl:ObjectProperty ;
+              rdfs:domain :tissue ;
+              rdfs:range :tissue ;
+              :id "contained_in"^^xsd:string ;
+              :shorthand "contained_in"^^xsd:string ;
+              rdfs:label "contained in"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#derived_from
+:derived_from rdf:type owl:ObjectProperty ;
+              rdfs:domain :cell_line ;
+              rdfs:range :cell_line ;
+              :id "derived_from"^^xsd:string ;
+              :shorthand "derived_from"^^xsd:string ;
+              rdfs:label "derived from"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#develops_from
+:develops_from rdf:type owl:ObjectProperty ;
+               :id "develops_from"^^xsd:string ;
+               :shorthand "develops_from"^^xsd:string ;
+               rdfs:label "develops from"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#disease_arises_from_structure
+:disease_arises_from_structure rdf:type owl:ObjectProperty ;
+                               rdfs:domain :cell_type ,
+                                           :tissue ;
+                               rdfs:range :tissue ;
+                               :id "disease_arises_from_structure"^^xsd:string ;
+                               :shorthand "disease_arises_from_structure"^^xsd:string ;
+                               rdfs:label "disease arises from structure"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#disease_causes_dysfunction_of
+:disease_causes_dysfunction_of rdf:type owl:ObjectProperty ;
+                               rdfs:domain :cell_type ,
+                                           :tissue ;
+                               rdfs:range :tissue ;
+                               :id "disease_causes_dysfunction_of"^^xsd:string ;
+                               :shorthand "disease_causes_dysfunction_of"^^xsd:string ;
+                               rdfs:label "disease causes dysfunction of"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#downregulates
+:downregulates rdf:type owl:ObjectProperty ;
+               :id "downregulates"^^xsd:string ;
+               :shorthand "downregulates"^^xsd:string ;
+               rdfs:label "downregulates"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#enriched_in
+:enriched_in rdf:type owl:ObjectProperty ;
+             rdfs:domain :pathway ;
+             rdfs:range :disease ;
+             :id "enriched_in"^^xsd:string ;
+             :shorthand "enriched_in"^^xsd:string ;
+             rdfs:label "enriched in"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#has_similar_structure
+:has_similar_structure rdf:type owl:ObjectProperty ;
+                       rdfs:domain :drug ;
+                       rdfs:range :drug ;
+                       :id "has_similar_structure"^^xsd:string ;
+                       :shorthand "has_similar_structure"^^xsd:string ;
+                       rdfs:label "has similar structure"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#interacts_with
+:interacts_with rdf:type owl:ObjectProperty ;
+                rdfs:domain :drug ;
+                rdfs:range :gene ;
+                :id "interacts_with"^^xsd:string ;
+                :shorthand "interacts_with"^^xsd:string ;
+                rdfs:label "interacts with"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#is_a
+:is_a rdf:type owl:ObjectProperty ;
+      :id "is_a"^^xsd:string ;
+      :shorthand "is_a"^^xsd:string ;
+      rdfs:label "is a"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#obtained_from_sample_with_disease
+:obtained_from_sample_with_disease rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :cell_line ;
+                                   rdfs:range :disease ;
+                                   :id "obtained_from_sample_with_disease"^^xsd:string ;
+                                   :shorthand "obtained_from_sample_with_disease"^^xsd:string ;
+                                   rdfs:label "obtained from sample with disease"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#originate_from_same_individual_as
+:originate_from_same_individual_as rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :cell_line ;
+                                   rdfs:range :cell_line ;
+                                   :id "originate_from_same_individual_as"^^xsd:string ;
+                                   :shorthand "originate_from_same_individual_as"^^xsd:string ;
+                                   rdfs:label "originate from same individual as"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#part_of
+:part_of rdf:type owl:ObjectProperty ;
+         :id "part_of"^^xsd:string ;
+         :shorthand "part_of"^^xsd:string ;
+         rdfs:label "part of"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#produced_by
+:produced_by rdf:type owl:ObjectProperty ;
+             :id "produced_by"^^xsd:string ;
+             :shorthand "produced_by"^^xsd:string ;
+             rdfs:label "produced by"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#realized_in
+:realized_in rdf:type owl:ObjectProperty ;
+             rdfs:domain :cell_type ,
+                         :tissue ;
+             rdfs:range :tissue ;
+             :id "realized_in"^^xsd:string ;
+             :shorthand "realized_in"^^xsd:string ;
+             rdfs:label "realized in"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#sampled_from
+:sampled_from rdf:type owl:ObjectProperty ;
+              rdfs:domain :cell_line ;
+              rdfs:range :tissue ;
+              :id "sampled_from"^^xsd:string ;
+              :shorthand "sampled_from"^^xsd:string ;
+              rdfs:label "sampled from"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#upregulates
+:upregulates rdf:type owl:ObjectProperty ;
+             :id "upregulates"^^xsd:string ;
+             :shorthand "upregulates"^^xsd:string ;
+             rdfs:label "upregulates"^^xsd:string .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#agr
+:agr rdf:type owl:DatatypeProperty ;
+     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#alias_name
+:alias_name rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#alias_symbol
+:alias_symbol rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#category
+:category rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#ccds_id
+:ccds_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#cell_line_id
+:cell_line_id rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#cell_type_id
+:cell_type_id rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#chebi_id
+:chebi_id rdf:type owl:DatatypeProperty ;
+          :id "chebi_id"^^xsd:string ;
+          :shorthand "chebi_id"^^xsd:string ;
+          rdfs:label "chebi id"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#chembl_id
+:chembl_id rdf:type owl:DatatypeProperty ;
+           :id "chembl_id"^^xsd:string ;
+           :shorthand "chembl_id"^^xsd:string ;
+           rdfs:label "chembl id"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#datasets
+:datasets rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#date_modified
+:date_modified rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#definition
+:definition rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#disease_id
+:disease_id rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#drug_id
+:drug_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#ena
+:ena rdf:type owl:DatatypeProperty ;
+     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#ensembl_gene_id
+:ensembl_gene_id rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#entrez_id
+:entrez_id rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#enzyme_id
+:enzyme_id rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#full_name
+:full_name rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#gender
+:gender rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#gene_group
+:gene_group rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#gene_id
+:gene_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#imgt
+:imgt rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#location_sortable
+:location_sortable rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#locus_group
+:locus_group rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#mane_select
+:mane_select rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#mgd_id
+:mgd_id rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#omim_id
+:omim_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#ontology
+:ontology rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#pathway_id
+:pathway_id rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#prev_name
+:prev_name rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#prev_symbol
+:prev_symbol rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#pseudogene_org
+:pseudogene_org rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#pubmed_id
+:pubmed_id rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#pval
+:pval rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#refseq_accession
+:refseq_accession rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#rgd_id
+:rgd_id rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#synonyms
+:synonyms rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#tissue_id
+:tissue_id rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#type
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#ucsc_id
+:ucsc_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#uniprot_ids
+:uniprot_ids rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#vega_id
+:vega_id rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#cell_line
+:cell_line rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#cell_type
+:cell_type rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#disease
+:disease rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#drug
+:drug rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#gene
+:gene rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#pathway
+:pathway rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pawan/ontologies/2022/6/untitled-ontology-20#tissue
+:tissue rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
