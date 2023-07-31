@@ -1,9 +1,3 @@
 .DS_Store
-
-*.obo
-*.ttl
-*.csv
-*.tsv
 *.pyc
-*.sql
-*.json
+*.ttl
